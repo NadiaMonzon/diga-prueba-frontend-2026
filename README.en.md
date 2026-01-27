@@ -8,7 +8,8 @@ In this test, you will implement a design from Figma, the software you will be u
 
 The test consists of implementing a small dashboard that simulates the real functionality of our product: analyzing statistics and call details. You have one hour to complete it.
 
-> [!note] Duration of the exercise
+> [!note]
+> **Duration of the exercise**
 > Although you only have **one hour** to complete the exercise, it is designed to take longer. Do not worry if you are unable to finish. We want to evaluate your ability to prioritize and assess the importance of tasks.
 
 ## What does the task consist of?

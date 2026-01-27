@@ -1,6 +1,6 @@
 # Prueba Técnica Frontend Enero 2026
 
-[Read this file in english here.](README.en)
+[Read this file in english here.](README.en.md)
 
 ## Descripción
 
@@ -11,7 +11,8 @@ La prueba consiste en la implementación de un pequeño dashboard, que simula la
 funcionalidad real de nuestro producto: el análisis de estadísticas y detalles
 de llamadas. Tendrás una hora para realizarlo.
 
-> [!note] Duración del ejercicio
+> [!NOTE]
+> **Duración del ejercicio**
 > A pesar de que solo tienes una hora para realizar el ejercicio, este está
 > diseñado para ser completado en más tiempo así que no te preocupes si no eres
 > capaz de terminar. Queremos evaluar tu capacidad de priorizar y valorar
@@ -172,7 +173,7 @@ Obtiene los detalles de facturación y suscripción del proyecto actual.
 
 ### Documentación de librerías
 
-- [Tailwind CSS](https://tailwindcss.com/).
+- [Tailwind CSS](https://tailwindcss.com/)
 - [Vite](https://vite.dev/guide/)
 - [Untitled UI Components](https://www.untitledui.com/react/components)
 
