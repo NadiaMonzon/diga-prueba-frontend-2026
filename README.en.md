@@ -43,11 +43,11 @@ These tasks are not in any specific order; organize them as you prefer.
 
 - **Create a sidebar with two pages.**
     - The first one will be called "Subscription". You can find this component in [this file](./code/src/pages/subscription.tsx). That code works but has issues. **Refactor it** as you would in a real PR.
-    - The second one will be "List", showing the list of received calls.
+    - The second one will be "Call Register", showing the list of received calls.
 
 - **Project Selector:** inside the sidebar, create a "Project Selector" that allows the user to change the API key used in requests. When the user switches projects, the page content must **reload automatically**.
 
-- **Infinite Scroll:** On the list page, add an infinite scroll to load the different pages of calls that might exist.
+- **Infinite Scroll:** On the call register page, add an infinite scroll to load the different pages of calls that might exist.
 
 - **State Handling:** Loading states and error states must be handled differently and explicitly.
 
