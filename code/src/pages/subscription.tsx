@@ -20,7 +20,7 @@ export default function SubscriptionPage() {
 
     useEffect(() => {
         fetchData();
-    }, []);
+    });
 
     const daysLeft = Math.round((new Date(s?.period_end).getTime() - new Date().getTime()) / (10 * 3600 * 24)) / 100;
 

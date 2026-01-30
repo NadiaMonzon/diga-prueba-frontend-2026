@@ -29,8 +29,7 @@ de llamadas. Tendrás una hora para realizarlo.
 
 ## ¿En qué consiste la tarea?
 
-Deberás implementar este [diseño de Figma](https://www.figma.com/design/Nv7e6LVCWymsxPgsxRMa3v/Prueba-técnica---Frontend?node-id=1480-0&p=f&m=draw),
-usando React con TS y Tailwind CSS.
+Deberás implementar este [diseño de Figma](https://www.figma.com/design/Nv7e6LVCWymsxPgsxRMa3v/Prueba-técnica---Frontend?node-id=1480-0&p=f&m=draw), usando React con TS y Tailwind CSS.
 
 Puedes partir de este repositorio, que tiene una instalación por defecto de Vite
 con TS preconfigurado y Tailwind instalado. También puedes encontrar los
@@ -58,6 +57,8 @@ Estás tareas no están en ningún orden concreto, organízalas como prefieras.
     en [este archivo](./code/src/pages/subscription.tsx), ese código funciona pero tiene problemas. Refáctorizalo
     como harías en una PR real.
     - La segunda será "Registro de llamadas" y muestra el listado de las llamadas recibidas.
+    - Se debe marcar con un estilo distinto (consultar Figma) la página en la
+    que nos encontramos.
 
 - En esta sidebar, crea un "Selector de proyectos" que le permitirá al usuario
 cambiar la API key que se usa en las peticiones. Cuando el usuario cambia de
@@ -242,10 +243,16 @@ simuladas con las que podrás trabajar en la prueba.
 
 ## Otras anotaciones
 
-- A pesar de que tenemos un endpoit para obtener el nombre del project, no es
+- A pesar de que tenemos un endpoint para obtener el nombre del proyecto, no es
 necesario que lo uses. Puedes mostrar los primeros 10 caracteres de cada API key
 en el selector.
-- La API key seleccionada puede ser guardad en memoria, no hace falta que la
+- La API key seleccionada puede ser guardada en memoria, no hace falta que la
 guardes en el localStorage.
 - Puedes encontar algunos recursos (como nuestro logo para la sidebar) en el
 directorio public.
+- Tienes clases ya creadas con los colores que se usan en Figma, así como
+clases con los tamaños de letra y fuentes preconfiguradas.
+- Las librerías react-router-dom y @react-types/overlays vienen como
+dependencia.
+- Untitled tiene algunas funciones predefinidas que puedes ayudarte en
+[este directorio](./code/src/utils). Por ejemplo `cx` para unir clases.

@@ -23,8 +23,7 @@ The test consists of implementing a small dashboard that simulates the real func
 
 ## What does the task consist of?
 
-You must implement this [Figma design](https://www.figma.com/design/Nv7e6LVCWymsxPgsxRMa3v/Prueba-técnica---Frontend?node-id=1480-0&p=f&m=draw),
-using **React with TS** and **Tailwind CSS**.
+You must implement this [Figma design](https://www.figma.com/design/Nv7e6LVCWymsxPgsxRMa3v/Prueba-técnica---Frontend?node-id=1480-0&p=f&m=draw), using **React with TS** and **Tailwind CSS**.
 
 You can start from this repository, which includes a default Vite installation pre-configured with TS and Tailwind installed. You can also find components from *Untitled*, the library we use at Diga.
 
@@ -45,6 +44,7 @@ These tasks are not in any specific order; organize them as you prefer.
 - **Create a sidebar with two pages.**
     - The first one will be called "Subscription". You can find this component in [this file](./code/src/pages/subscription.tsx). That code works but has issues. **Refactor it** as you would in a real PR.
     - The second one will be "Call Register", showing the list of received calls.
+    - The current page must be marked with a different style (check Figma).
 
 - **Project Selector:** inside the sidebar, create a "Project Selector" that allows the user to change the API key used in requests. When the user switches projects, the page content must **reload automatically**.
 
@@ -220,11 +220,17 @@ that you can use to work in this exercise.
 
 ---
 
-## Other anotations
+## Other annotations
 
 - Although we have an endpoint to get the name of the project, there's no need
-use it, you can display the first 10 character of each API key in the selector.
+to use it. You can display the first 10 characters of each API key in the selector.
 - The selected API key can be stored in memory, don't bother saving it in
 localStorage if you don't want.
 - You can find some resources (such as our logo for the sidebar) in the public
 directory.
+- There are pre-created classes with the colors used in Figma, as well as
+classes with pre-configured font sizes and typefaces.
+- The libraries react-router-dom and @react-types/overlays are included as
+dependencies.
+- Untitled has some predefined utility functions that can help you in
+[this directory](./code/src/utils). For example, `cx` for joining classes.
