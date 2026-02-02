@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { LoadingIndicator } from "@/components/application/loading-indicator/loading-indicator";
 import { Table, TableCard } from "@/components/application/table/table";
 import { Badge } from "@/components/base/badges/badges";
+import { useApiKey } from "@/providers/api-key-provider";
 
 interface CallLogContact {
     id: string;
@@ -85,14 +86,14 @@ const getCallTypeLabel = (type: CallLogItem["type"]) => {
 export default function CallLogPage() {
     const [callData, setCallData] = useState<CallLogResponse["data"]>([]);
     const [isLoading, setIsLoading] = useState(false);
+    const { apiKey } = useApiKey();
 
     async function fetchData() {
         setIsLoading(true);
         const res = await fetch("/api/v1/call", {
             method: "GET",
             headers: {
-                // TODO: move to .env variable
-                Authorization: "Bearer sk-944645d244ddfa2890b77f2c1262e595d1aa6ad89a8d3775cb29c036dba9d55d",
+                Authorization: `Bearer ${apiKey}`,
             },
         });
         const data = await res.json();
@@ -102,7 +103,7 @@ export default function CallLogPage() {
 
     useEffect(() => {
         fetchData();
-    }, []);
+    }, [apiKey]);
     return (
         <div style={{ padding: "32px" }} className="flex flex-1 flex-col gap-8">
             <div className="flex w-full max-w-full flex-col gap-1 lg:max-w-3xl">

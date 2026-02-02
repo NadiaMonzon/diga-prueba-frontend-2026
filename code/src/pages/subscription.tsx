@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ProgressBarCircle } from "@/components/base/progress-indicators/progress-circles";
+import { useApiKey } from "@/providers/api-key-provider";
 
 interface SubscriptionDataResponse {
     name: string;
@@ -22,14 +23,14 @@ interface SubscriptionDataResponse {
 export default function SubscriptionPage() {
     const [subscription, setSubscription] = useState<SubscriptionDataResponse>();
     const [isLoading, setIsLoading] = useState(false);
+    const { apiKey } = useApiKey();
 
     async function fetchData() {
         setIsLoading(true);
         const res = await fetch("/api/v1/billing/subscription", {
             method: "GET",
             headers: {
-                // TODO: move to .env variable
-                Authorization: "Bearer sk-944645d244ddfa2890b77f2c1262e595d1aa6ad89a8d3775cb29c036dba9d55d",
+                Authorization: `Bearer ${apiKey}`,
             },
         });
         const data = await res.json();
@@ -39,7 +40,7 @@ export default function SubscriptionPage() {
 
     useEffect(() => {
         fetchData();
-    }, []);
+    }, [apiKey]);
 
     const remainingSubscriptionDays = subscription?.period_end
         ? Math.round((new Date(subscription?.period_end).getTime() - new Date().getTime()) / (10 * 3600 * 24)) / 100
