@@ -1,8 +1,26 @@
 import { useEffect, useState } from "react";
 import { ProgressBarCircle } from "@/components/base/progress-indicators/progress-circles";
 
+interface SubscriptionDataResponse {
+    name: string;
+    next_invoice_date: string;
+    next_invoice_amount: number;
+    period_start: string;
+    period_end: string;
+    included_minutes: number;
+    active_since: string;
+    price: number;
+    currency: string;
+    period: string;
+    usage_based_billing_enabled: boolean;
+    minutes_count: number;
+    rollover_minutes_count: number;
+    next_payment_date: string;
+    id?: string;
+}
+
 export default function SubscriptionPage() {
-    const [subscription, setSubscription] = useState<any>();
+    const [subscription, setSubscription] = useState<SubscriptionDataResponse>();
     const [isLoading, setIsLoading] = useState(false);
 
     async function fetchData() {
@@ -23,7 +41,9 @@ export default function SubscriptionPage() {
         fetchData();
     }, []);
 
-    const daysLeft = Math.round((new Date(subscription?.period_end).getTime() - new Date().getTime()) / (10 * 3600 * 24)) / 100;
+    const remainingSubscriptionDays = subscription?.period_end
+        ? Math.round((new Date(subscription?.period_end).getTime() - new Date().getTime()) / (10 * 3600 * 24)) / 100
+        : 0;
 
     if (!subscription) return null;
 
@@ -48,7 +68,7 @@ export default function SubscriptionPage() {
                             </div>
                             <div className="flex h-max flex-col">
                                 <p className="text-body-sm text-brand-additional-500">Días restantes para el próximo pago</p>
-                                <p className="text-body-sm text-neutral-colors-600">{daysLeft} días</p>
+                                <p className="text-body-sm text-neutral-colors-600">{remainingSubscriptionDays} días</p>
                             </div>
                             <div className="flex h-max flex-col">
                                 <p className="text-body-sm text-brand-additional-500">Minutos restantes</p>
