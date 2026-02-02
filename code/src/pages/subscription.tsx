@@ -10,6 +10,7 @@ export default function SubscriptionPage() {
         const res = await fetch("/api/v1/billing/subscription", {
             method: "GET",
             headers: {
+                // TODO: move to .env variable
                 Authorization: "Bearer sk-944645d244ddfa2890b77f2c1262e595d1aa6ad89a8d3775cb29c036dba9d55d",
             },
         });
@@ -20,7 +21,7 @@ export default function SubscriptionPage() {
 
     useEffect(() => {
         fetchData();
-    });
+    }, []);
 
     const daysLeft = Math.round((new Date(subscription?.period_end).getTime() - new Date().getTime()) / (10 * 3600 * 24)) / 100;
 
