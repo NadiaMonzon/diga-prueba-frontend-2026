@@ -5,6 +5,7 @@ import { RouteProvider } from "@/providers/router-provider";
 import { ThemeProvider } from "@/providers/theme-provider";
 import "@/styles/globals.css";
 import NavigationSidebar from "./components/layout/NavigationSidebar";
+import CallLogPage from "./pages/call-log";
 import SubscriptionPage from "./pages/subscription";
 import WelcomePage from "./pages/welcome";
 import EnWelcomePage from "./pages/welcome.en";
@@ -29,7 +30,7 @@ createRoot(document.getElementById("root")!).render(
                             path="/call-log"
                             element={
                                 <NavigationSidebar>
-                                    <SubscriptionPage />
+                                    <CallLogPage />
                                 </NavigationSidebar>
                             }
                         />
